@@ -33,6 +33,7 @@ const Contact = () => {
         emailjs.sendForm('service_12ml0ha', 'template_4hyq67n', formRef.current, 'F6yG5wZl-Sops0kIz')
           .then((result) => {
             setSuccess(true);
+              document.getElementById("form").reset();
           }, (error) => {
             setError(true);
           });
@@ -79,7 +80,7 @@ const Contact = () => {
               </g>
               </svg>
           </motion.div>
-          <motion.form ref={formRef} onSubmit={sendEmail} initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1,delay:2}} className='d-flex flex-column align-itemc-center justify-content-center  w-100 px-md-3  gap-3' >
+          <motion.form id="form" ref={formRef} onSubmit={sendEmail} initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1,delay:2}} className='d-flex flex-column align-itemc-center justify-content-center  w-100 px-md-3  gap-3' >
               <input type="text" required placeholder='Name' name='name' />
               <input type="email" required placeholder='Email'  name='email'/>
               <textarea rows={8} placeholder='Message' name='message'></textarea>
