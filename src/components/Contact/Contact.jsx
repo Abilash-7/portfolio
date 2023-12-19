@@ -29,7 +29,7 @@ const Contact = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-        alert("hello")
+        alert("submitted :)")
         emailjs.sendForm('service_12ml0ha', 'template_4hyq67n', formRef.current, 'F6yG5wZl-Sops0kIz')
           .then((result) => {
             setSuccess(true);
